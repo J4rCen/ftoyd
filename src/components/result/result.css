@@ -1,0 +1,41 @@
+.result_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+
+.result_scope {
+    flex-direction: column;
+    width: 200px;
+}
+
+.result_team {
+    display: flex;
+    gap: 10px
+}
+
+.result_team_logo {
+    width: 35px;
+}
+
+.result_scope_status {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.bg-Scheduled {
+    background-color: orange;
+}
+
+.bg-Ongoing {
+    background-color: green;
+}
+
+.bg-Finished {
+    background-color: #eb0237;
+}
