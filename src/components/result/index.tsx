@@ -1,4 +1,5 @@
 import './result.css'
+import React from 'react'
 
 export interface IResult {
     awayScore: number
@@ -12,7 +13,7 @@ export interface IResult {
     status: string
 }
 
-const Result = (props: IResult) => {
+const Result: React.FC<IResult> = (props: IResult) => {
     return (
         <div className='result_container bg-dark c-white'>
             <div className='result_team center'>

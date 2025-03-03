@@ -1,9 +1,10 @@
-import { memo, Suspense, useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import './scoreboard.css'
 import Result, { IResult } from '../../components/result'
 import Fronttemp from '../../api/fronttemp'
+import Loader from '../../components/loader'
 
-const Scoreboard = () => {
+const Scoreboard: React.FC = () => {
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [isError, setIsError] = useState<boolean>(false)
@@ -33,14 +34,6 @@ const Scoreboard = () => {
         }
     }
 
-    const Loader = () => {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
-
     return (
         <div className='scoreboard_container'>
             <div className='scoreboard_header'>
@@ -58,15 +51,13 @@ const Scoreboard = () => {
                     </button>
                 </div>
             </div>
-            
-                <div className='scoreboard_main'>
-                    {   
-                        isLoading ?
-                        <Loader/>
-                        : matchesStatus.map((match, index) => <Result key={index} {...match}/>)
-                    }
-                </div>
-            
+            <div className='scoreboard_main'>
+                {   
+                    isLoading 
+                    ? <Loader/>
+                    : matchesStatus.map((match, index) => <Result key={index} {...match}/>)
+                }
+            </div>
         </div>
     )
 }
